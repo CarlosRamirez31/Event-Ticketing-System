@@ -1,4 +1,6 @@
-﻿namespace EventTicketing.Application.Domain.Entities
+﻿using Microsoft.Identity.Client;
+
+namespace EventTicketing.Application.Domain.Entities
 {
     public class Place
     {
@@ -16,5 +18,6 @@
         public int ZoneId { get; private set; }
         public Zone? Zone { get; set; }
         public ICollection<Place> Places { get; set; } = new HashSet<Place>();
+        public ICollection<Ticket> Tickets { get; set; } = new HashSet<Ticket>();
     }
 }
