@@ -12,11 +12,16 @@ namespace EventTicketing.Application.Infrastructure.Persistence.Configurations
 
             builder.HasOne(x => x.EventPrice)
                 .WithMany(x => x.Tickets)
-                .HasForeignKey(x => x.EventPriceId);
+                .HasForeignKey(x => x.EventPriceId)
+                .HasConstraintName("FK_TicketEventPrice")
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(x => x.Place)
                 .WithMany(x => x.Tickets)
-                .HasForeignKey(x => x.TicketId);
+                .HasForeignKey(x => x.TicketId)
+                .HasConstraintName("FK_TicketPlace")
+                .OnDelete(DeleteBehavior.NoAction);
+
 
             builder.Property(x => x.ParticipantName)
                 .HasMaxLength(90);

@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace EventTicketing.Application.Domain.Entities
+﻿namespace EventTicketing.Application.Domain.Entities
 {
     public class Event
     {

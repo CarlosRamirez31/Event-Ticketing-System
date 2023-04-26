@@ -12,7 +12,9 @@ namespace EventTicketing.Application.Infrastructure.Persistence.Configurations
 
             builder.HasOne(x => x.Zone)
                 .WithMany(x => x.Places)
-                .HasPrincipalKey(x => x.ZoneId);
+                .HasForeignKey(x => x.ZoneId)
+                .HasConstraintName("FK_PlaceZone")
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Property(x => x.Name).HasMaxLength(90);
         }

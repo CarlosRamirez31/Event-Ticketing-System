@@ -1,5 +1,6 @@
 ﻿using EventTicketing.Application.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace EventTicketing.Application.Infrastructure.Persistence
 {
@@ -20,7 +21,7 @@ namespace EventTicketing.Application.Infrastructure.Persistence
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(Application).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

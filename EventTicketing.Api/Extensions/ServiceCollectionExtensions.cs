@@ -1,4 +1,7 @@
-﻿namespace EventTicketing.Api.Extensions
+﻿using EventTicketing.Application.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+
+namespace EventTicketing.Api.Extensions
 {
     public static class ServiceCollectionExtensions
     {

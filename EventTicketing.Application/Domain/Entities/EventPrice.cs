@@ -2,7 +2,7 @@
 {
     public class EventPrice
     {
-        public EventPrice(int eventPriceId, int eventId, int zoneId, int price)
+        public EventPrice(int eventPriceId, int eventId, int zoneId, double price)
         {
             EventPriceId = eventPriceId;
             EventId = eventId;

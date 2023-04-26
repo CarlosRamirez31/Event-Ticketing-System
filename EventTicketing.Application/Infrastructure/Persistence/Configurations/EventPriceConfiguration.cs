@@ -12,11 +12,15 @@ namespace EventTicketing.Application.Infrastructure.Persistence.Configurations
 
             builder.HasOne(x => x.Event)
                 .WithMany(x => x.EventPrices)
-                .HasForeignKey(x => x.EventId);
+                .HasForeignKey(x => x.EventId)
+                .HasConstraintName("FK_EventPriceEvent")
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(x => x.Zone)
                 .WithMany(x => x.EventPrices)
-                .HasForeignKey(x => x.ZoneId);
+                .HasForeignKey(x => x.ZoneId)
+                .HasConstraintName("FK_EventPriceZone")
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

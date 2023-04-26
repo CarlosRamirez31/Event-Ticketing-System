@@ -15,7 +15,7 @@
         public int EventPriceId { get; private set; }
         public int PlaceId { get; private set; }
         public string ParticipantName { get; private set; } 
-        public DateTime? PaymentDate { get; private set; }
+        public DateTime PaymentDate { get; private set; }
         public EventPrice? EventPrice { get; set; }
         public Place? Place { get; set; }
     }
