@@ -9,6 +9,7 @@ var configuration = builder.Configuration;
 builder.Services.AddCarter();
 builder.Services.AddSwagger();
 builder.Services.AddPersistence(configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

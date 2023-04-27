@@ -1,4 +1,5 @@
 ﻿using EventTicketing.Application.Infrastructure.Persistence;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,6 +15,14 @@ namespace EventTicketing.Application
             services.AddDbContext<EventTicketingContext>(option =>
                 option.UseSqlServer(configuration.GetConnectionString("EventTicketing"))
                 );
+
+            return services;
+        }
+
+        public static IServiceCollection AddApplication(this IServiceCollection services)
+        {
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return services;
         }
