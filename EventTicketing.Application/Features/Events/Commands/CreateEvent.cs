@@ -54,7 +54,7 @@ namespace EventTicketing.Application.Features.Events.Commands
                 _context.Add(newEvent);
                 await _context.SaveChangesAsync();
 
-                return Results.Ok();
+                return Results.Created($"api/Event/{newEvent.EventId}", null);
             }
         }
 
