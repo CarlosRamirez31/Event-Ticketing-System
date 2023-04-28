@@ -11,14 +11,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EventTicketing.Application.Features.Events.Queries
 {
-    public class GetEventById : ICarterModule
+    public class GetEvent : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
             app.MapGet("api/Event", async (IMediator mediator) =>
             {
                 return await mediator.Send(new GetEventQuery());
-            });
+            })
+            .WithName(nameof(GetEvent))
+            .WithTags(nameof(Event));
+            
         }
 
         public class GetEventQuery : IRequest<List<GetEventDto>>
