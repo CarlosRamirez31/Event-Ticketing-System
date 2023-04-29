@@ -1,4 +1,6 @@
-﻿namespace EventTicketing.Application.Domain.Entities
+﻿using EventTicketing.Application.Features.Events.Commands;
+
+namespace EventTicketing.Application.Domain.Entities
 {
     public class Event
     {
@@ -19,5 +21,15 @@
         public string Location { get; private set; }
         public string EventCreatedBy { get; private set; }
         public ICollection<EventPrice> EventPrices { get; set; } = new HashSet<EventPrice>();
+
+        public void UpdateEvent(UpdateEvent.UpdateEventCommand command)
+        {
+            EventId = command.EventId;
+            Name = command.Name;
+            StartDate = command.StartDate;
+            EndDate = command.EndDate;
+            Location = command.Location;
+            EventCreatedBy = command.EventCreatedBy;
+        }
     }
 }
