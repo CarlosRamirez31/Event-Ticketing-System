@@ -21,7 +21,7 @@ namespace EventTicketing.Application.Features.Events.Commands
             .WithName(nameof(CreateEvent))
             .WithTags(nameof(Event))
             .ProducesValidationProblem()
-            .Produces(StatusCodes.Status200OK);
+            .Produces(StatusCodes.Status201Created);
         }
         public class CreateEventCommand : IRequest<IResult>
         {

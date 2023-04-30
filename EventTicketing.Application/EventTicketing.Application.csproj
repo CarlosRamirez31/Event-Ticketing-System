@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Common\Behaviours\" />
     <Folder Include="Domain\Events\" />
+    <Folder Include="Features\Zones\Queries\" />
     <Folder Include="Helpers\" />
     <Folder Include="Infrastructure\Persistence\Migrations\" />
   </ItemGroup>
